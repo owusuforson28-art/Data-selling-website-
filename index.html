@@ -9,16 +9,12 @@
       --bg: #0b0f19;
       --text: white;
       --card: #111827;
-      --primary: #4f46e5;
-      --secondary: #9333ea;
     }
 
     body.light {
       --bg: #f3f4f6;
       --text: #111;
       --card: white;
-      --primary: #2563eb;
-      --secondary: #06b6d4;
     }
 
     body {
@@ -27,12 +23,13 @@
       background: var(--bg);
       color: var(--text);
       text-align: center;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, #FFD700, #E10600, #0057B8);
       padding: 60px 20px;
+      color: white;
       position: relative;
     }
 
@@ -56,6 +53,11 @@
       padding: 40px 20px;
     }
 
+    .network-title {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
     .card {
       background: var(--card);
       margin: 20px auto;
@@ -66,7 +68,6 @@
       font-size: 20px;
       font-weight: bold;
       box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-      cursor: pointer;
       text-decoration: none;
       color: inherit;
       display: block;
@@ -78,25 +79,21 @@
     }
 
     .price {
-      color: #facc15;
+      color: #FFD700;
       font-size: 22px;
       margin-top: 8px;
     }
 
     .btn {
       display: inline-block;
-      margin: 12px;
-      padding: 14px 35px;
+      margin: 15px;
+      padding: 15px 35px;
       font-size: 18px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, #0057B8, #E10600);
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
-    }
-
-    .btn:hover {
-      opacity: 0.85;
     }
 
     .float {
@@ -128,45 +125,41 @@
 <header>
   <button class="toggle-btn" onclick="toggleMode()">🌙 / ☀️</button>
   <h1>Forson Data Hub</h1>
-  <p>Fast • Reliable • Affordable</p>
+  <p>MTN Direct Purchase | Other Networks via WhatsApp</p>
 </header>
 
 <div class="section">
-  <h2>Click To Buy Packages</h2>
+
+  <div class="network-title">🟡 MTN Packages (Direct Buy)</div>
 
   <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10402&network=mtn" target="_blank">
-    1GB
-    <div class="price">GHS 5.3</div>
+    1GB - GHS 5.3
   </a>
 
   <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10407&network=mtn" target="_blank">
-    2GB
-    <div class="price">GHS 10.9</div>
+    2GB - GHS 10.9
   </a>
 
   <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10410&network=mtn" target="_blank">
-    3GB
-    <div class="price">GHS 15.8</div>
+    3GB - GHS 15.8
   </a>
 
   <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10413&network=mtn" target="_blank">
-    4GB
-    <div class="price">GHS 21</div>
+    4GB - GHS 21
   </a>
 
   <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10415&network=mtn" target="_blank">
-    5GB
-    <div class="price">GHS 27</div>
+    5GB - GHS 27
   </a>
 
-  <br>
-
-  <a class="btn" href="https://wa.me/233548603224" target="_blank">
-    💬 WhatsApp Support
+  <div class="network-title">🔴 Telecel</div>
+  <a class="btn" href="https://wa.me/233548603224?text=I%20want%20Telecel%20data" target="_blank">
+    Order Telecel via WhatsApp
   </a>
 
-  <a class="btn" href="https://datatrade.store/Forson_Data_Hub" target="_blank">
-    🛒 Full Store
+  <div class="network-title">🔴🔵 AirtelTigo</div>
+  <a class="btn" href="https://wa.me/233548603224?text=I%20want%20AirtelTigo%20data" target="_blank">
+    Order AirtelTigo via WhatsApp
   </a>
 
 </div>
