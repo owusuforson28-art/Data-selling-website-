@@ -1,110 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Forson Data Hub</title>
+  <title>Forson Data Hub - Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root {
-      --bg: #0b0f19;
-      --text: white;
-      --card: #111827;
-    }
-
-    body.light {
-      --bg: #f3f4f6;
-      --text: #111;
-      --card: white;
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      text-align: center;
-      transition: 0.3s ease;
-    }
-
-    header {
-      background: linear-gradient(135deg, #FFD700, #E10600, #0057B8);
-      padding: 60px 20px;
+      background: #0f172a;
       color: white;
-      position: relative;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 34px;
+    .login, .dashboard {
+      display: none;
+      padding: 30px;
     }
 
-    .toggle-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      padding: 8px 14px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: var(--card);
-      margin: 20px auto;
-      padding: 22px;
-      border-radius: 18px;
-      width: 95%;
-      max-width: 450px;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-      text-decoration: none;
-      color: inherit;
+    .active {
       display: block;
     }
 
-    .price {
-      color: #FFD700;
-      font-size: 22px;
-      margin-top: 8px;
+    input {
+      padding: 12px;
+      margin: 10px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: none;
     }
 
-    .btn {
-      display: inline-block;
-      margin: 12px;
-      padding: 14px 30px;
-      font-size: 16px;
-      background: #E10600;
+    button {
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      background: #4f46e5;
       color: white;
-      text-decoration: none;
-      border-radius: 30px;
       font-weight: bold;
+      cursor: pointer;
     }
 
-    .float {
-      position: fixed;
-      width: 65px;
-      height: 65px;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      font-size: 30px;
-      line-height: 65px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px black;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
     }
 
-    footer {
+    .card {
+      background: #1e293b;
       padding: 20px;
-      background: var(--card);
-      margin-top: 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    table {
+      width: 100%;
+      margin-top: 30px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #334155;
+    }
+
+    th {
+      background: #1e293b;
     }
 
   </style>
@@ -112,50 +74,65 @@
 
 <body>
 
-<header>
-  <button class="toggle-btn" onclick="toggleMode()">🌙 / ☀️</button>
-  <h1>Forson Data Hub</h1>
-  <p>MTN Direct | Full Store | WhatsApp | SMS Orders</p>
-</header>
+<!-- LOGIN PAGE -->
+<div class="login active" id="loginPage">
+  <h2>Admin Login</h2>
+  <input type="password" id="password" placeholder="Enter Admin Password">
+  <br>
+  <button onclick="login()">Login</button>
+</div>
 
-<div class="section">
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
 
-  <h2>🟡 MTN Direct Purchase</h2>
+  <h1>Forson Data Hub Dashboard</h1>
 
-  <a class="card" href="https://datatrade.store/Forson_Data_Hub/buy?package=10402&network=mtn" target="_blank">
-    1GB - GHS 5.3
-  </a>
+  <div class="cards">
 
-  <a class="card" href="https://datatrade.store/Forson_Data_Hub" target="_blank">
-    🛒 Access MTN Full Store
-  </a>
+    <div class="card">
+      <h3>Total Revenue</h3>
+      <p>GHS 0.00</p>
+    </div>
 
-  <h2>🔴 Telecel</h2>
-  <a class="btn" href="https://wa.me/233548603224?text=I%20want%20Telecel%20data" target="_blank">
-    Order via WhatsApp
-  </a>
+    <div class="card">
+      <h3>Total Orders</h3>
+      <p>0</p>
+    </div>
 
-  <h2>🔴🔵 AirtelTigo</h2>
-  <a class="btn" href="https://wa.me/233548603224?text=I%20want%20AirtelTigo%20data" target="_blank">
-    Order via WhatsApp
-  </a>
+    <div class="card">
+      <h3>Pending Orders</h3>
+      <p>0</p>
+    </div>
 
-  <h2>📩 SMS Orders</h2>
-  <a class="btn" href="sms:233548603224?body=I%20want%20to%20order%20data">
-    Send SMS Order
-  </a>
+  </div>
+
+  <table>
+    <tr>
+      <th>Order ID</th>
+      <th>Network</th>
+      <th>Amount</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>#001</td>
+      <td>MTN</td>
+      <td>GHS 5.3</td>
+      <td>Completed</td>
+    </tr>
+  </table>
 
 </div>
 
-<a href="https://wa.me/233548603224" class="float" target="_blank">💬</a>
-
-<footer>
-  © 2026 Forson Data Hub
-</footer>
-
 <script>
-function toggleMode() {
-  document.body.classList.toggle("light");
+function login() {
+  const password = document.getElementById("password").value;
+
+  if(password === "admin123") {
+    document.getElementById("loginPage").classList.remove("active");
+    document.getElementById("dashboard").classList.add("active");
+  } else {
+    alert("Wrong password!");
+  }
 }
 </script>
 
