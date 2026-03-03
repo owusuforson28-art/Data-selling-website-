@@ -3,23 +3,29 @@
 <head>
   <title>Forson Data Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background-color: #0f172a;
       color: white;
       text-align: center;
     }
 
     header {
       background: linear-gradient(135deg, #ff7e5f, #feb47b);
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
       font-size: 32px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
     }
 
     .section {
@@ -33,7 +39,12 @@
       border-radius: 15px;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     .price {
@@ -44,20 +55,21 @@
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
+      margin-top: 20px;
+      padding: 12px 30px;
       background: #ff7e5f;
       color: white;
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 30px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .btn:hover {
       opacity: 0.8;
     }
 
-    /* Floating WhatsApp */
+    /* Floating WhatsApp Button */
     .float {
       position: fixed;
       width: 60px;
@@ -68,19 +80,21 @@
       color: #FFF;
       border-radius: 50%;
       text-align: center;
-      font-size: 30px;
+      font-size: 28px;
       line-height: 60px;
       text-decoration: none;
-      box-shadow: 2px 2px 8px #000;
+      box-shadow: 2px 2px 10px #000;
     }
 
     footer {
       padding: 20px;
       background: #1e293b;
       font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -97,13 +111,23 @@
   </div>
 
   <div class="card">
+    <h3>2GB</h3>
+    <p class="price">GHS 10</p>
+  </div>
+
+  <div class="card">
     <h3>3GB</h3>
-    <p class="price">GHS 12</p>
+    <p class="price">GHS 14.5</p>
+  </div>
+
+  <div class="card">
+    <h3>4GB</h3>
+    <p class="price">GHS 19</p>
   </div>
 
   <div class="card">
     <h3>5GB</h3>
-    <p class="price">GHS 20</p>
+    <p class="price">GHS 24</p>
   </div>
 
   <a class="btn" href="https://wa.me/233548603224">
@@ -111,6 +135,7 @@
   </a>
 </div>
 
+<!-- Floating WhatsApp Icon -->
 <a href="https://wa.me/233548603224" class="float">
   💬
 </a>
